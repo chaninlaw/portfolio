@@ -1,10 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { ConfigProvider, theme } from 'antd'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import { store } from './app/stores'
+import App from './App.tsx'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+const root = createRoot(document.getElementById('root')!)
+
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ConfigProvider>
+  </React.StrictMode>
 )
