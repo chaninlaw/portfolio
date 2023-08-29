@@ -1,8 +1,8 @@
 import { useRoutes } from 'react-router-dom'
 import { Routes } from './routers'
-import { Layout, theme } from 'antd'
-import Breadcrumb from './components/Breadcrum'
+import { Layout, Breadcrumb, theme } from 'antd'
 import { MainBreadcrum } from './routers/breadcrum'
+import RouteLink from './components/RouteLink'
 
 const { Header, Content, Footer } = Layout
 
@@ -14,7 +14,11 @@ function App() {
     <Layout style={{ height: '100vh' }}>
       <Header style={{ background: colorBgBase }} />
       <Content style={{ background: colorBgBase, padding: '0 50px' }}>
-        <Breadcrumb items={MainBreadcrum} />
+        <Breadcrumb
+          items={MainBreadcrum}
+          separator={<div className='select-none'>\</div>}
+          itemRender={(route) => <RouteLink route={route} />}
+        />
         {element}
       </Content>
       <Footer style={{ textAlign: 'center' }}>
