@@ -13,7 +13,9 @@ root.render(
   <React.StrictMode>
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter
+          basename={import.meta.env.DEV ? '/' : '/portfolio/'}
+        >
           <App />
         </BrowserRouter>
       </Provider>
