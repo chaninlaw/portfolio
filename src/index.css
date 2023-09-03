@@ -1,3 +1,41 @@
+@font-face {
+  font-family: "DM Serif Display";
+  font-weight: 400;
+  src: local("DM_Serif_Display"),
+    url("./assets/fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-weight: 400;
+  src: local("Rubik"),
+    url("./assets/fonts/Rubik/static/Rubik-Regular.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  font-weight: 400;
+  src: local("Lora"),
+    url("./assets/fonts/Lora/Lora-VariableFont_wght.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EG Garamond";
+  font-weight: 400;
+  src: local("EB_Garamond"),
+    url("./assets/fonts/EB_Garamond/static/EBGaramond-Regular.ttf");
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-Rubik;
+  }
+}

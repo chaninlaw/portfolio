@@ -10,11 +10,13 @@ const GalaxyCanvas: React.FC<Props> = () => {
   useEffect(() => {}, [])
 
   return (
-    <div className="absolute inset-0">
-      <Canvas camera={{ position: [1, 10, 50], fov: 10 }}>
-        <OrbitControls makeDefault />
-        <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 0, 5]} />
+    <div className="absolute inset-0 -z-10 bg-black">
+      <Canvas frameloop="demand" shadows gl={{ preserveDrawingBuffer: true }}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
         <Suspense fallback={<CanvasLoader />}>
           <Model />
         </Suspense>

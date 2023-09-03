@@ -8,20 +8,26 @@ const Home: BreadcrumbItemType = {
 
 const About: BreadcrumbItemType = {
   key: 'about',
-  title: 'about',
+  title: 'about me',
   path: `/about`,
 }
 
-const Labs: BreadcrumbItemType = {
-  key: 'labs',
-  title: 'labs',
-  path: `/labs`,
+const Showcase: BreadcrumbItemType = {
+  key: 'showcase',
+  title: 'showcase',
+  path: `/showcase`,
 }
 
-const Roadmap: BreadcrumbItemType = {
-  key: 'roadmap',
-  title: 'roadmap',
-  path: `/roadmap`,
+const Post: BreadcrumbItemType = {
+  key: 'post',
+  title: 'post',
+  path: `/post`,
 }
 
-export const MainBreadcrum = [Home, About, Labs, Roadmap]
+// const Roadmap: BreadcrumbItemType = {
+//   key: 'roadmap',
+//   title: 'roadmap',
+//   path: `/roadmap`,
+// }
+
+export const MainBreadcrum = [Home, About, Showcase, Post]
