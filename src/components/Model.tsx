@@ -5,7 +5,7 @@ import { useGLTF } from '@react-three/drei'
 import { Mesh } from 'three'
 
 interface Props {}
-const fileUrl = '/need_some_space/scene.gltf'
+const fileUrl = 'public/need_some_space/scene.gltf'
 const Model: React.FC<Props> = () => {
   const modelRef = useRef<Mesh>(null!)
   const gltf = useGLTF(fileUrl)
