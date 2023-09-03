@@ -30,6 +30,7 @@ const AboutPage: React.FC<Props> = () => {
       fetchWakaLangs()
       fetchWakaCode()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

@@ -4,8 +4,8 @@ import { Loader } from '../components/Loader'
 
 const HomePage = Loader(lazy(() => import('../pages/Home')))
 const AboutPage = Loader(lazy(() => import('../pages/About')))
-const LabsPage = Loader(lazy(() => import('../pages/Labs')))
-const RoadmapPage = Loader(lazy(() => import('../pages/Roadmap')))
+// const LabsPage = Loader(lazy(() => import('../pages/Labs')))
+// const RoadmapPage = Loader(lazy(() => import('../pages/Roadmap')))
 const ShowcasePage = Loader(lazy(() => import('../pages/Showcase')))
 const PostPage = Loader(lazy(() => import('../pages/Post')))
 

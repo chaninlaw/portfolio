@@ -2,7 +2,7 @@ import React from 'react'
 
 interface Props {}
 
-const Showcase = (props: Props) => {
+const Showcase: React.FC<Props> = () => {
   return (
     <div>Showcase</div>
   )

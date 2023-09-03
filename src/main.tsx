@@ -22,9 +22,7 @@ const myTheme: ConfigProviderProps['theme'] = {
 
 root.render(
   <React.StrictMode>
-    <ConfigProvider
-      theme={myTheme}
-    >
+    <ConfigProvider theme={myTheme}>
       <Provider store={store}>
         <BrowserRouter>
           <App />

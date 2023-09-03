@@ -2,7 +2,7 @@ import React from 'react'
 
 interface Props {}
 
-const Post = (props: Props) => {
+const Post: React.FC<Props> = () => {
   return (
     <div>Post</div>
   )
