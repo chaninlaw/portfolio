@@ -39,7 +39,7 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-         env:
+        env:
           VITE_WAKATIME_CODE_API: ${{ secrets.VITE_WAKATIME_CODE_API }}
           VITE_WAKATIME_LANGUAGES_API: ${{ secrets.VITE_WAKATIME_LANGUAGES_API }}
       - name: Setup Pages
