@@ -17,7 +17,6 @@ import {
 } from '@ant-design/icons'
 import { useActions } from '../hooks/useActions'
 import { useTypedSelector } from '../hooks/useTypedSelection'
-import axios from 'axios'
 
 interface Props {}
 
@@ -30,10 +29,8 @@ const AboutPage: React.FC<Props> = () => {
     if (stats.data.length === 0 && !codeActivity.data) {
       fetchWakaLangs()
       fetchWakaCode()
-      axios.get('https://jsonplaceholder.typicode.com/todos/1')
-      .then(({data}) => console.log(data))
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -44,7 +41,7 @@ const AboutPage: React.FC<Props> = () => {
       <Col xs={12} sm={12} className="space-y-10">
         <Card
           type="inner"
-          className='backdrop-blur-sm bg-[#141414]/80'
+          className="backdrop-blur-sm bg-[#141414]/80"
           title={<Typography.Title level={3}>My Skills</Typography.Title>}
           bordered={false}
           actions={[
@@ -56,7 +53,12 @@ const AboutPage: React.FC<Props> = () => {
           <Row align="middle">
             {mySkills.map(({ label, icon }) => {
               return (
-                <Col className="flex flex-col items-center pb-4" key={label} xs={4} sm={4}>
+                <Col
+                  className="flex flex-col items-center pb-4"
+                  key={label}
+                  xs={4}
+                  sm={4}
+                >
                   {icon}
                   {label}
                 </Col>
@@ -66,7 +68,7 @@ const AboutPage: React.FC<Props> = () => {
         </Card>
         <Card
           type="inner"
-          className='backdrop-blur-sm bg-[#141414]/80'
+          className="backdrop-blur-sm bg-[#141414]/80"
           title={<Typography.Title level={3}>My Statistic</Typography.Title>}
           bordered={false}
           actions={[
@@ -92,7 +94,10 @@ const AboutPage: React.FC<Props> = () => {
               {stats.data.map((stat, i) => {
                 if (i < 5) {
                   return (
-                    <Card.Grid key={stat.name} className='border-none shadow-none'>
+                    <Card.Grid
+                      key={stat.name}
+                      className="border-none shadow-none"
+                    >
                       <Statistic
                         title={stat.name}
                         value={stat.text}
