@@ -24,7 +24,7 @@ root.render(
   <React.StrictMode>
     <ConfigProvider theme={myTheme}>
       <Provider store={store}>
-        <BrowserRouter basename={import.meta.env.PROD ? '/portfolio' : '/'}>
+        <BrowserRouter basename={import.meta.env.PROD ? '/portfolio/' : '/'}>
           <App />
         </BrowserRouter>
       </Provider>
