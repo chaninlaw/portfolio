@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+[![Deploy static content to Pages](https://github.com/chaninlaw/portfolio/actions/workflows/main.yml/badge.svg)](https://github.com/chaninlaw/portfolio/actions/workflows/main.yml)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
