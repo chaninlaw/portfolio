@@ -29,6 +29,7 @@ const AboutPage: React.FC<Props> = () => {
     if (stats.data.length === 0 && !codeActivity.data) {
       fetchWakaLangs()
       fetchWakaCode()
+      console.log(import.meta.env.VITE_WAKATIME_LANGUAGES_API, import.meta.env.VITE_WAKATIME_CODE_API)
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -89,7 +90,7 @@ const AboutPage: React.FC<Props> = () => {
               {stats.data.map((stat, i) => {
                 if (i < 5) {
                   return (
-                    <Row key={stat.name}>
+                    <Card.Grid key={stat.name} className='border-none shadow-none'>
                       <Statistic
                         title={stat.name}
                         value={stat.text}
@@ -100,7 +101,7 @@ const AboutPage: React.FC<Props> = () => {
                         percent={Math.round(stat.percent)}
                         status="active"
                       />
-                    </Row>
+                    </Card.Grid>
                   )
                 }
               })}
