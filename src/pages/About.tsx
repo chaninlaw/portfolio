@@ -41,9 +41,10 @@ const AboutPage: React.FC<Props> = () => {
       <Col xs={12} sm={12} className="space-y-10">
         <Card
           type="inner"
+          loading={stats.loading}
+          bordered={false}
           className="backdrop-blur-sm bg-[#141414]/80"
           title={<Typography.Title level={3}>My Skills</Typography.Title>}
-          bordered={false}
           actions={[
             <SettingOutlined key="setting" />,
             <EditOutlined key="edit" />,
@@ -68,9 +69,10 @@ const AboutPage: React.FC<Props> = () => {
         </Card>
         <Card
           type="inner"
+          bordered={false}
+          loading={stats.loading}
           className="backdrop-blur-sm bg-[#141414]/80"
           title={<Typography.Title level={3}>My Statistic</Typography.Title>}
-          bordered={false}
           actions={[
             <Statistic
               title="Total hour"
@@ -89,31 +91,20 @@ const AboutPage: React.FC<Props> = () => {
             />,
           ]}
         >
-          <Row align="middle">
-            <Skeleton loading={stats.loading}>
-              {stats.data.map((stat, i) => {
-                if (i < 5) {
-                  return (
-                    <Card.Grid
-                      key={stat.name}
-                      className="border-none shadow-none"
-                    >
-                      <Statistic
-                        title={stat.name}
-                        value={stat.text}
-                        loading={stats.loading}
-                      />
-                      <Progress
-                        strokeColor={stat.color}
-                        percent={Math.round(stat.percent)}
-                        status="active"
-                      />
-                    </Card.Grid>
-                  )
-                }
-              })}
-            </Skeleton>
-          </Row>
+          {stats.data.map((stat, i) => {
+            if (i < 5) {
+              return (
+                <Card.Grid key={stat.name} className="border-none shadow-none">
+                  <Statistic title={stat.name} value={stat.text} />
+                  <Progress
+                    strokeColor={stat.color}
+                    percent={Math.round(stat.percent)}
+                    status="active"
+                  />
+                </Card.Grid>
+              )
+            }
+          })}
         </Card>
       </Col>
     </Row>
