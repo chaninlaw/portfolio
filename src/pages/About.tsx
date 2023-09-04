@@ -17,6 +17,7 @@ import {
 } from '@ant-design/icons'
 import { useActions } from '../hooks/useActions'
 import { useTypedSelector } from '../hooks/useTypedSelection'
+import axios from 'axios'
 
 interface Props {}
 
@@ -29,7 +30,8 @@ const AboutPage: React.FC<Props> = () => {
     if (stats.data.length === 0 && !codeActivity.data) {
       fetchWakaLangs()
       fetchWakaCode()
-      console.log(import.meta.env.VITE_WAKATIME_LANGUAGES_API, import.meta.env.VITE_WAKATIME_CODE_API)
+      axios.get('https://jsonplaceholder.typicode.com/todos/1')
+      .then(({data}) => console.log(data))
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

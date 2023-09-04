@@ -11,7 +11,6 @@ const Model: React.FC<Props> = () => {
   const gltf = useGLTF(fileUrl)
 
   useEffect(() => {
-    console.log(fileUrl)
     // modelRef.current.rotation.y = 1
     // modelRef.current.rotation.x = 0.1
     modelRef.current.rotation.z = -0.4
