@@ -1,4 +1,4 @@
-import { Button, TimelineProps, Typography } from 'antd'
+import { TimelineProps, Typography } from 'antd'
 
 import { FaNodeJs, FaReact } from 'react-icons/fa'
 import { TbBrandRedux } from 'react-icons/tb'
@@ -46,13 +46,10 @@ export const timelineItems: TimelineProps['items'] = [
   {
     label: <Typography>Jan 2023</Typography>,
     children: (
-      <>
-        <Typography>
-          'From Management to Code: My Journey of Self-Learning and Becoming a
-          Developer'
-        </Typography>
-        <Button type="default">Certification</Button>
-      </>
+      <Typography>
+        'From Management to Code: My Journey of Self-Learning and Becoming a
+        Developer'
+      </Typography>
     ),
   },
   {
@@ -69,10 +66,10 @@ export const timelineItems: TimelineProps['items'] = [
     ),
   },
   {
-    dot: <LoadingOutlined spin/>,
+    dot: <LoadingOutlined spin />,
     label: <Typography>Next</Typography>,
-    children: <Typography>Roadmap</Typography>
-  }
+    children: <Typography>Roadmap</Typography>,
+  },
 ]
 
 const iconSize = 25

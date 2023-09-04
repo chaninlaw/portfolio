@@ -1,7 +1,7 @@
 import { Action } from '../actions'
 import { ActionType } from '../actionTypes'
 
-interface WakaLangsData {
+export interface WakaLangsData {
   name: string
   percent: number
   color: string

@@ -1,37 +1,18 @@
-import React, { useEffect } from 'react'
-import {
-  Card,
-  Col,
-  Progress,
-  Row,
-  Skeleton,
-  Statistic,
-  Timeline,
-  Typography,
-} from 'antd'
-import { mySkills, timelineItems } from '../constants'
+import { Card, Col, Row, Timeline, Typography } from 'antd'
+import { timelineItems } from '../constants'
 import {
   EditOutlined,
   EllipsisOutlined,
   SettingOutlined,
 } from '@ant-design/icons'
-import { useActions } from '../hooks/useActions'
 import { useTypedSelector } from '../hooks/useTypedSelection'
+import SkillsIconList from '../components/SkillsIconList'
+import StatsCardList from '../components/StatsCardList'
 
 interface Props {}
 
 const AboutPage: React.FC<Props> = () => {
-  const { fetchWakaCode, fetchWakaLangs } = useActions()
   const stats = useTypedSelector((state) => state.fetchWakaLang)
-  const codeActivity = useTypedSelector((state) => state.fetchWakaCode)
-
-  useEffect(() => {
-    if (stats.data.length === 0 && !codeActivity.data) {
-      fetchWakaLangs()
-      fetchWakaCode()
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <Row className="mx-20">
@@ -51,61 +32,9 @@ const AboutPage: React.FC<Props> = () => {
             <EllipsisOutlined key="ellipsis" />,
           ]}
         >
-          <Row align="middle">
-            {mySkills.map(({ label, icon }) => {
-              return (
-                <Col
-                  className="flex flex-col items-center pb-4"
-                  key={label}
-                  xs={4}
-                  sm={4}
-                >
-                  {icon}
-                  {label}
-                </Col>
-              )
-            })}
-          </Row>
+          <SkillsIconList />
         </Card>
-        <Card
-          type="inner"
-          bordered={false}
-          loading={stats.loading}
-          className="backdrop-blur-sm bg-[#141414]/80"
-          title={<Typography.Title level={3}>My Statistic</Typography.Title>}
-          actions={[
-            <Statistic
-              title="Total hour"
-              value={codeActivity.data?.grand_total.human_readable_total}
-              loading={codeActivity.loading}
-            />,
-            <Statistic
-              title="Best Avg."
-              value={codeActivity.data?.best_day.text}
-              loading={codeActivity.loading}
-            />,
-            <Statistic
-              title="Days"
-              value={codeActivity.data?.range.days_including_holidays}
-              loading={codeActivity.loading}
-            />,
-          ]}
-        >
-          {stats.data.map((stat, i) => {
-            if (i < 5) {
-              return (
-                <Card.Grid key={stat.name} className="border-none shadow-none">
-                  <Statistic title={stat.name} value={stat.text} />
-                  <Progress
-                    strokeColor={stat.color}
-                    percent={Math.round(stat.percent)}
-                    status="active"
-                  />
-                </Card.Grid>
-              )
-            }
-          })}
-        </Card>
+        <StatsCardList />
       </Col>
     </Row>
   )
