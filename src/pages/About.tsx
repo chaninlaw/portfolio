@@ -12,7 +12,6 @@ import StatsCardList from '../components/StatsCardList'
 interface Props {}
 
 const AboutPage: React.FC<Props> = () => {
-  const stats = useTypedSelector((state) => state.fetchWakaLang)
 
   return (
     <Row className="mx-20">
@@ -22,10 +21,9 @@ const AboutPage: React.FC<Props> = () => {
       <Col xs={12} sm={12} className="space-y-10">
         <Card
           type="inner"
-          loading={stats.loading}
           bordered={false}
           className="backdrop-blur-sm bg-[#141414]/80"
-          title={<Typography.Title level={3}>My Skills</Typography.Title>}
+          title={<Typography.Title level={3} className='mb-0'>My Skills</Typography.Title>}
           actions={[
             <SettingOutlined key="setting" />,
             <EditOutlined key="edit" />,

@@ -41,7 +41,7 @@ const StatsCardList: React.FC = () => {
       bordered={false}
       loading={stats.loading}
       className="backdrop-blur-sm bg-[#141414]/80"
-      title={<Typography.Title level={3}>My Statistic</Typography.Title>}
+      title={<Typography.Title level={3} className='mb-0'>My Statistic</Typography.Title>}
       actions={StatsActions}
     >
       {stats.data.map((stat, i) => {

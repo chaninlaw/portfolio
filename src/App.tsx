@@ -3,8 +3,9 @@ import { Routes } from './routers'
 import { Layout, Breadcrumb, Button, FloatButton } from 'antd'
 import { MainBreadcrum } from './routers/breadcrum'
 import RouteLink from './components/RouteLink'
-import GalaxyCanvas from './components/GalaxyCanvas'
+// import GalaxyCanvas from './components/GalaxyCanvas'
 import { GithubOutlined } from '@ant-design/icons'
+import PaticlesCanvas from './components/PaticlesCanvas'
 
 const { Header, Content, Footer } = Layout
 
@@ -32,7 +33,7 @@ function App() {
           </Button>
         </a>
       </Header>
-      <Content className="">{element}</Content>
+      <Content>{element}</Content>
       <Footer className="text-right bg-transparent">
         ninja ©2023 made with love
       </Footer>
@@ -41,7 +42,8 @@ function App() {
         tooltip={'contact me'}
         onClick={navigateToContact}
       />
-      <GalaxyCanvas />
+      {/* <GalaxyCanvas /> */}
+      <PaticlesCanvas />
     </Layout>
   )
 }
