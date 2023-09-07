@@ -38,16 +38,15 @@ const StatsCardList: React.FC = () => {
   return (
     <Card
       type="inner"
-      bordered={false}
       loading={stats.loading}
-      className="backdrop-blur-sm bg-[#141414]/80"
-      title={<Typography.Title level={3} className='mb-0'>My Statistic</Typography.Title>}
+      className="backdrop-blur-sm bg-[#141414]/30"
+      title={<Typography className="text-xl">My Statistic</Typography>}
       actions={StatsActions}
     >
       {stats.data.map((stat, i) => {
         if (i < 6) {
           return (
-            <Card.Grid className="border-none shadow-none" key={stat.name}>
+            <Card.Grid hoverable key={stat.name}>
               <StatsCardItem data={stat} />
             </Card.Grid>
           )

@@ -1,19 +1,17 @@
 import React from 'react'
-import { Row, Typography, Col, theme, Space } from 'antd'
+import { Row, Typography, Col, Space } from 'antd'
 import LinkButton from '../components/LinkButton'
 import TextTyping from '../components/TextTyping'
 
 interface Props {}
 
 const HomePage: React.FC<Props> = () => {
-  const { colorTextLightSolid } = theme.useToken().token
-
   return (
-    <Row className="mt-10 mx-20">
-      <Col xs={12} sm={12}>
-        <Typography className="font-EG text-9xl" color={colorTextLightSolid}>
+    <Row className="mx-10 mt-10 md:mx-20">
+      <Col xs={24} sm={24}>
+        <Typography className="font-EG text-6xl md:text-9xl">
           Hey, <br /> I'm <span className="text-emerald-400">Ninja</span>
-          <Typography className="text-2xl ml-2">
+          <Typography className="text-lg md:text-xl">
             a web developer's journey <br />
             <TextTyping />
           </Typography>

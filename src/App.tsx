@@ -1,11 +1,10 @@
 import { useNavigate, useRoutes } from 'react-router-dom'
 import { Routes } from './routers'
-import { Layout, Breadcrumb, Button, FloatButton } from 'antd'
+import { Layout, Breadcrumb, FloatButton } from 'antd'
 import { MainBreadcrum } from './routers/breadcrum'
 import RouteLink from './components/RouteLink'
-// import GalaxyCanvas from './components/GalaxyCanvas'
-import { GithubOutlined } from '@ant-design/icons'
 import PaticlesCanvas from './components/PaticlesCanvas'
+import ButtonGithub from './components/ButtonGithub'
 
 const { Header, Content, Footer } = Layout
 
@@ -26,12 +25,7 @@ function App() {
           separator={<div className="select-none">\</div>}
           itemRender={(route) => <RouteLink route={route} />}
         />
-        <a href="http://www.github.com/chaninlaw" target="_blank">
-          <Button size="large" className="flex items-center">
-            <GithubOutlined />
-            github/chaninlaw
-          </Button>
-        </a>
+        <ButtonGithub />
       </Header>
       <Content>{element}</Content>
       <Footer className="text-right bg-transparent">
@@ -42,7 +36,6 @@ function App() {
         tooltip={'contact me'}
         onClick={navigateToContact}
       />
-      {/* <GalaxyCanvas /> */}
       <PaticlesCanvas />
     </Layout>
   )

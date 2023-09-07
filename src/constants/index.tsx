@@ -16,8 +16,8 @@ import {
   SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
+  SiDocker,
 } from 'react-icons/si'
-import { LoadingOutlined } from '@ant-design/icons'
 
 export const timelineItems: TimelineProps['items'] = [
   {
@@ -65,11 +65,6 @@ export const timelineItems: TimelineProps['items'] = [
       </>
     ),
   },
-  {
-    dot: <LoadingOutlined spin />,
-    label: <Typography>Next</Typography>,
-    children: <Typography>Roadmap</Typography>,
-  },
 ]
 
 const iconSize = 25
@@ -92,4 +87,5 @@ export const mySkills = [
   { label: 'Git', icon: <BsGit size={iconSize} /> },
   { label: 'Postgresql', icon: <BiLogoPostgresql size={iconSize} /> },
   { label: 'Mongodb', icon: <SiMongodb size={iconSize} /> },
+  { label: 'Docker', icon: <SiDocker size={iconSize} /> },
 ]

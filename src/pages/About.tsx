@@ -7,22 +7,27 @@ import {
 } from '@ant-design/icons'
 import SkillsIconList from '../components/SkillsIconList'
 import StatsCardList from '../components/StatsCardList'
+import DotAnimation from '../components/DotAnimation'
 
 interface Props {}
 
 const AboutPage: React.FC<Props> = () => {
-
   return (
     <Row className="mx-20">
-      <Col xs={12} sm={12}>
-        <Timeline className="mr-80" mode="left" items={timelineItems} />
+      <Col xs={24} sm={8}>
+        <Timeline
+          mode="left"
+          pending={'Roadmap...'}
+          pendingDot={<DotAnimation />}
+          items={timelineItems}
+        />
       </Col>
-      <Col xs={12} sm={12} className="space-y-10">
+      <Col sm={3}></Col>
+      <Col xs={24} sm={12} className="space-y-10">
         <Card
           type="inner"
-          bordered={false}
-          className="backdrop-blur-sm bg-[#141414]/80"
-          title={<Typography.Title level={3} className='mb-0'>My Skills</Typography.Title>}
+          className="backdrop-blur-sm bg-[#141414]/30"
+          title={<Typography className="text-xl">My Skills</Typography>}
           actions={[
             <SettingOutlined key="setting" />,
             <EditOutlined key="edit" />,
