@@ -5,7 +5,6 @@ import {
   EllipsisOutlined,
   SettingOutlined,
 } from '@ant-design/icons'
-import { useTypedSelector } from '../hooks/useTypedSelection'
 import SkillsIconList from '../components/SkillsIconList'
 import StatsCardList from '../components/StatsCardList'
 
