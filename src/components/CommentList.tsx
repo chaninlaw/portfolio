@@ -1,20 +1,12 @@
-const CommentList = ({ comments }) => {
-  const renderedPost = comments.map((comment) => {
-    let content
+import { Comments } from '../pages/Post'
 
-    if ( comment.status === 'approved') {
-      content = comment.content
-    }
+interface Props {
+  comments: Comments[]
+}
 
-    if ( comment.status === 'pending') {
-      content = "This comment is awaiting moderation"
-    }
-
-    if ( comment.status === 'rejected') {
-      content = "This comment has been rejected"
-    }
-
-    return <li key={comment.id}>{content}</li>
+const CommentList: React.FC<Props> = ({ comments }) => {
+  const renderedPost = comments.map(({ postId, comment }) => {
+    return <li key={postId}>{comment}</li>
   })
 
   return <ul>{renderedPost}</ul>
