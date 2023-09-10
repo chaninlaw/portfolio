@@ -23,7 +23,7 @@ const Showcase: React.FC<Props> = () => {
     <Row className="mx-5 md:mx-20">
       <Col>
         {ShowCaseItems.map((item) => {
-          return <ShowCaseItem item={item} />
+          return <ShowCaseItem key={item.title} item={item} />
         })}
       </Col>
     </Row>
