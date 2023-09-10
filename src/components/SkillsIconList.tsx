@@ -5,7 +5,7 @@ import SkillIconItem from './SkillIconItem'
 
 const SkillsIconList: React.FC = () => {
   return (
-    <Row align="middle" wrap>
+    <Row align="middle">
       {mySkills.map(({ label, icon }) => {
         return <SkillIconItem key={label} label={label} icon={icon} />
       })}

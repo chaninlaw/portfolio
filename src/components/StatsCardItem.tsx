@@ -1,4 +1,4 @@
-import { Progress, Statistic } from 'antd'
+import { Progress, Statistic, Typography } from 'antd'
 import React from 'react'
 import { WakaLangsData } from '../store/reducers/fetchWakaLangReducer'
 
@@ -9,9 +9,16 @@ interface Props {
 const StatsCardItem: React.FC<Props> = ({ data }) => {
   return (
     <>
-      <Statistic title={data.name} value={data.text} />
+      <Statistic
+        className="text-sm"
+        title={data.name}
+        value={data.text}
+        valueRender={(v) => (
+          <Typography className="text-sm md:text-base">{v}</Typography>
+        )}
+      />
       <Progress
-        type='line'
+        type="line"
         strokeColor={data.color}
         percent={Math.round(data.percent)}
         status="active"

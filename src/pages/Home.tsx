@@ -7,11 +7,11 @@ interface Props {}
 
 const HomePage: React.FC<Props> = () => {
   return (
-    <Row className="mx-10 mt-10 md:mx-20">
-      <Col xs={24} sm={24}>
+    <Row className="mx-4 mt-10 md:mx-20">
+      <Col xs={24} sm={24} id='home'>
         <Typography className="font-EG text-6xl md:text-9xl">
           Hey, <br /> I'm <span className="text-emerald-400">Ninja</span>
-          <Typography className="text-lg md:text-xl">
+          <Typography className="text-sm h-10 md:text-xl">
             a web developer's journey <br />
             <TextTyping />
           </Typography>

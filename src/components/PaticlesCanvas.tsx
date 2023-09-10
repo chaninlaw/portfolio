@@ -3,24 +3,26 @@ import Particles from 'react-particles'
 import type { Container, Engine } from 'tsparticles-engine'
 import { loadSlim } from 'tsparticles-slim'
 
-interface Props {}
+interface Props {
+  isDarkMode: boolean
+}
 
-const PaticlesCanvas: React.FC<Props> = () => {
+const PaticlesCanvas: React.FC<Props> = ({isDarkMode}) => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine)
+    // console.log(engine)
     await loadSlim(engine)
   }, [])
 
   const particlesLoaded = useCallback(
     async (container: Container | undefined) => {
-      await console.log(container)
+      await container
     },
     []
   )
   return (
     <Particles
       id="tsparticles"
-      className='absolute inset-0 -z-10 bg-black'
+      className={`absolute inset-0 -z-10 ${isDarkMode ? 'bg-black' : 'bg-white'}`}
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
@@ -33,13 +35,13 @@ const PaticlesCanvas: React.FC<Props> = () => {
             },
           },
           color: {
-            value: '#ffffff',
+            value: isDarkMode ? '#ffffff': '#000',
           },
           shape: {
             type: 'circle',
             stroke: {
               width: 0,
-              color: '#000000',
+              color: isDarkMode ? '#000000' : '#fff',
             },
             polygon: {
               nb_sides: 5,

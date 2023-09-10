@@ -7,7 +7,7 @@ interface Props {
 }
 const SkillIconItem: React.FC<Props> = ({ icon, label }) => {
   return (
-    <Col className="flex flex-col items-center py-2" key={label} sm={4}>
+    <Col className="flex flex-col items-center py-2" key={label} xs={12} sm={4}>
       {icon}
       {label}
     </Col>

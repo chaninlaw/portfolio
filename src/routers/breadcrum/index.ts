@@ -19,9 +19,9 @@ const Showcase: BreadcrumbItemType = {
 }
 
 const Post: BreadcrumbItemType = {
-  key: 'post',
-  title: 'post',
-  path: `/post`,
+  key: 'contact',
+  title: 'contact me',
+  path: `/contact`,
 }
 
 // const Roadmap: BreadcrumbItemType = {
@@ -31,3 +31,36 @@ const Post: BreadcrumbItemType = {
 // }
 
 export const MainBreadcrum = [Home, About, Showcase, Post]
+
+export const NavbarItem = [
+  {
+    key: 'home',
+    label: 'home',
+    path: '#home'
+  },
+  {
+    key: 'about',
+    label: 'about me',
+    path: `#about`,
+  },
+  {
+    key: 'showcase',
+    label: 'showcase',
+    path: `#showcase`,
+  },
+  {
+    key: 'skills',
+    label: 'skills',
+    path: `#skills`,
+  },
+  {
+    key: 'experience',
+    label: 'experience',
+    path: '#experience',
+  },
+  {
+    key: 'contact',
+    label: 'contact me',
+    path: '#contact',
+  },
+]

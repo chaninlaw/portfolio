@@ -7,13 +7,13 @@ const AboutPage = Loader(lazy(() => import('../pages/About')))
 // const LabsPage = Loader(lazy(() => import('../pages/Labs')))
 // const RoadmapPage = Loader(lazy(() => import('../pages/Roadmap')))
 const ShowcasePage = Loader(lazy(() => import('../pages/Showcase')))
-const PostPage = Loader(lazy(() => import('../pages/Post')))
+const ContactPage = Loader(lazy(() => import('../pages/Contact')))
 
 export const Routes: RouteObject[] = [
   { path: '/', element: <HomePage /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/showcase', element: <ShowcasePage /> },
-  { path: '/post', element: <PostPage /> },
+  { path: '/contact', element: <ContactPage /> },
   // { path: '/labs', element: <LabsPage /> },
   // { path: '/roadmap', element: <RoadmapPage /> },
 ]
