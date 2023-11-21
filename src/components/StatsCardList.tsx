@@ -11,7 +11,7 @@ const StatsCardList: React.FC = () => {
   const codeActivity = useTypedSelector((state) => state.fetchWakaCode)
 
   useEffect(() => {
-    if (stats.data.length === 0 && !codeActivity.data) {
+    if (stats.data?.length === 0 && !codeActivity.data) {
       fetchWakaLangs()
       fetchWakaCode()
     }
@@ -49,7 +49,7 @@ const StatsCardList: React.FC = () => {
       title={<Typography className="text-xl">My Statistic</Typography>}
       actions={StatsActions}
     >
-      {stats.data.map((stat, i) => {
+      {stats.data?.map((stat, i) => {
         if (i < 6) {
           return (
             <Card.Grid hoverable key={stat.name} className='!w-full md:!w-1/2 lg:!w-1/3'>
